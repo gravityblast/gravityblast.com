@@ -1,0 +1,10 @@
+title:        Hyde
+tagline:      "Hyde, a Jekyll theme"
+url:          http://andhyde.com
+author:
+  name:       "Andrea Franz"
+  email:      "andrea@gravityblast.com"
+markdown:     rdiscount
+permalink:    pretty
+pygments:     true
+paginate:     5
