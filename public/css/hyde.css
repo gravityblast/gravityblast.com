@@ -192,7 +192,7 @@ a:hover {
 }
 .masthead .logo {
   width: 100px;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   border-radius: 50px;
 }
 .masthead-inner {
@@ -230,12 +230,12 @@ a:hover {
 }
 /* Footer area of masthead */
 .colophon {
-  margin-top: 20px;
   color: #7a7a7a;
 }
 .colophon-links {
   padding-left: 0;
   list-style: none;
+  margin: 0 0 10px;
 }
 
 
@@ -327,7 +327,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .masthead-inner {
-    padding: 60px 40px 0;
+    padding: 20px 40px 0;
   }
   .posts {
     margin-left: 40px;
@@ -359,6 +359,9 @@ a:hover {
     width: 25%;
     height: 1px;
   }
+  .masthead-inner {
+    padding-top: 60px;
+  }
   .masthead .logo {
     border-radius: 5px;
     width: 100%;
@@ -374,11 +377,8 @@ a:hover {
     content: "";
   }
   .masthead h1 {
-    font-size: 32px;
+    font-size: 28px;
     text-align: left;
-  }
-  .colophon {
-    margin-top: 40px;
   }
 
   /* Remove mobile device padding from list of posts */
