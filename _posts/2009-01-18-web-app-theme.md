@@ -11,7 +11,6 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "Web App Theme"
 ---
 A simple theme for web apps. <a href="http://github.com/pilu/web-app-theme/tree/master">Fork it on github</a> and use it for your cool applications!
 

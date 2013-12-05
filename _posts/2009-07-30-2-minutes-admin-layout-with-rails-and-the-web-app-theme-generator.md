@@ -10,7 +10,6 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "2 minutes admin layout with rails and the web-app-theme generator"
 ---
 Many people found out a rails generator inside my <a href="http://github.com/pilu/web-app-theme">web-app-theme</a> project and asked me how to use it.
 Here an example, starting from scratch with a new rails app that manages music Albums.

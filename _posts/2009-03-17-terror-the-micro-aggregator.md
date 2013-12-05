@@ -10,7 +10,6 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "Terror the micro aggregator"
 ---
 <p><a href="http://github.com/pilu/terror/tree/master" title="Terror the micro feed aggregator">Terror</a> is a micro feed aggregator made with <a href="http://www.sinatrarb.com/" title="Sinatra">sinatra</a> and bundled as a gem. It's very simple to use, just install the gem:
 </p>

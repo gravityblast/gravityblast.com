@@ -4,11 +4,10 @@ title: musiXmatch API library for NodeJS
 tags:
 - javascript
 - nodejs
-
-excerpt: "musiXmatch API library for Node.js"
 ---
 I've just published my first <a title="NPM" href="http://npmjs.org/">NPM</a> package, and it's called <a title="musiXmatch for NodeJS" href="http://search.npmjs.org/#/musixmatch">musixmatch</a>. With this library you can easily use the <a title="musiXmatch" href="http://musixmatch.com/">musiXmatch</a> API with a few lines of javascript.
 Install it with NPM:
+
     npm install -g musixmatch
 
 And here an example:

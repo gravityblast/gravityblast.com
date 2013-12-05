@@ -10,7 +10,6 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "Radiant iPhone extension 0.0.1"
 ---
 <p>
 After some works for iPhone I decided to create an extension for Radiant that adds an iPhone tailored ui for the admin panel. It's the first version and for now it just allows to edit existing pages and add new page parts.

@@ -10,7 +10,6 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "Hostname middleware for rails apps on multiple servers"
 ---
 If you run a rails application on multiple servers behind a load balancer, almost every time you make a request you have a response from a different host. If you want to know which host has sent back the response, you can use a middleware that adds the hostname in the page title of each request.
 

@@ -12,7 +12,6 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "Testing rails generators with Cucumber"
 ---
 In the last days I switched a lot of old projects to use <a href="http://cukes.info/" title="Cucumber">Cucumber</a>, then I started writing test for <a href="http://github.com/pilu/web-app-theme" title="Web App Theme">Web App Theme</a>. Here I haven't models or controllers to test, because it's just a generator, but I found enjoyable the use of plain text features to describe the <strong>ThemeGenerator</strong> behavior:
 

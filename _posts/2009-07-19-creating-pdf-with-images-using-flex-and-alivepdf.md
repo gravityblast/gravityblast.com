@@ -10,11 +10,10 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "Creating PDF with images using flex and AlivePDF"
 ---
-<p>
+
 Today I'm working on an AIR application, and I need to create a PDF starting from a list of images. This PDF needs to have one image for each page. I used<a href="http://alivepdf.bytearray.org/" title="AlivePDF"> AlivePDF</a>, a very useful ActionScript3 library for PDF generation, and I created a simple class that takes an array of image paths and creates the PDF I need.
-</p>
+
 <p>Here the class I use:</p>
 <pre lang="actionscript">
 package

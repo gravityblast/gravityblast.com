@@ -13,7 +13,6 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "Flex functional testing with FunFx and Cucumber"
 ---
 [Cucumber](http://cukes.info/ "Cucumber") is a great tool I usually use for [BDD](http://en.wikipedia.org/wiki/Behavior_driven_development "Behavior Driven Development") in my ruby projects, but yesterday I tried it with Flex, and it was very enjoyable. Here a little example on how to test Flex applications with Cucumber.
 

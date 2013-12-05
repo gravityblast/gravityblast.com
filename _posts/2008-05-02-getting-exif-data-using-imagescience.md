@@ -10,18 +10,18 @@ type: post
 published: true
 meta:
   _edit_last: '1'
-excerpt: "Getting Exif data using ImageScience"
 ---
 In my current <a href="http://www.rubyonrails.org/" title="Ruby on Rails">rails</a> project I need to upload photos and save some exif data taken from them. I use <a href="http://github.com/technoweenie/attachment_fu/">attachment_fu</a> as uploading system that let me choose which image processor to use. Using rmagick and mini_magick I can extract exif data with the following code:
-<pre lang="ruby">
-# rmagick
-image = Magick::ImageList.new(filename).first
-puts image['EXIF:Model'] # The camera model used to take the picture
 
-# mini_magick
-image = MiniMagick::Image.from_file(filename)
-puts image["EXIF:Model"]
-</pre>
+
+    # rmagick
+    image = Magick::ImageList.new(filename).first
+    puts image['EXIF:Model'] # The camera model used to take the picture
+    
+    # mini_magick
+    image = MiniMagick::Image.from_file(filename)
+    puts image["EXIF:Model"]
+
 
 The problem is that I can't do the same thing with <a href="http://seattlerb.rubyforge.org/ImageScience.html" title="ImageScience">image_science</a>, because it has no methods that return exif data, so I want to add a method to the ImageScience class to do that.
 Looking the <a href="http://freeimage.sourceforge.net/">FreeImage</a> <a href="http://freeimage.sourceforge.net/fip/index.html">documentation</a> I found some helpful functions, FreeImage_GetMetadata and FreeImage_TagToString. With these 2 functions I'm able to get an exif tag and convert it to a readable string. Each one of the available tags belongs to one of the following meta models:

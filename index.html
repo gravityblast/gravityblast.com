@@ -13,7 +13,11 @@ layout: default
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
 
-    {{ post.content }}
+    {{ post.excerpt }}
+
+    <p>
+      <a href="{{ post.url}}">Read the rest of this entry »</a>
+    </p>
   </div>
   {% endfor %}
 </div>
