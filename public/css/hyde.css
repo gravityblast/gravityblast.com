@@ -190,6 +190,11 @@ a:hover {
   /* color: #fff; */
   /* background-color: #2a2a2a; */
 }
+.masthead .logo{
+  width: 100px;
+  margin: 0 auto;
+  border-radius: 50px;
+}
 .masthead-inner {
   padding: 20px;
 }
@@ -312,7 +317,7 @@ a:hover {
 
 @media (min-width: 768px) {
   .masthead-inner {
-    padding: 40px;
+    padding: 60px 40px 0;
   }
   .posts {
     margin-left: 40px;
@@ -326,7 +331,7 @@ a:hover {
     font-size: 18px;
   }
   .lead {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   /* Center container in available real estate */
@@ -339,23 +344,19 @@ a:hover {
   /* Fix the masthead to the side for impact and awesomeness */
   .masthead {
     position: fixed;
-    top: 0;
+    top: 10px;
     left: 0;
-    bottom: 0;
     width: 25%;
-    margin-bottom: 0;
+    height: 1px;
+  }
+  .masthead .logo {
+    width: 100%;
   }
   .masthead-inner ul li {
     display: block;
   }
   .masthead-inner ul li:after {
     content: "";
-  }
-  .masthead-inner {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
   }
   .masthead h1 {
     font-size: 32px;
