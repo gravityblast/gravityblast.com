@@ -1,13 +1,9 @@
 ---
 layout: post
-
 title: musiXmatch API library for NodeJS
 tags:
-- Javascript
-- NodeJS
-status: publish
-type: post
-published: true
+- javascript
+- nodejs
 
 excerpt: "musiXmatch API library for Node.js"
 ---
