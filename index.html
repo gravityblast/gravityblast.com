@@ -18,6 +18,11 @@ layout: default
     <p>
       <a href="{{ post.url}}">Read the rest of this entry »</a>
     </p>
+    <p class="tags">
+      {% for tag in post.tags %}
+        #{{ tag }}
+      {% endfor %}
+    </p>
   </div>
   {% endfor %}
 </div>
