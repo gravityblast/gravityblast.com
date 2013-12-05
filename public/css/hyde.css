@@ -190,13 +190,17 @@ a:hover {
   /* color: #fff; */
   /* background-color: #2a2a2a; */
 }
-.masthead .logo{
+.masthead .logo {
   width: 100px;
   margin: 0 auto;
   border-radius: 50px;
 }
 .masthead-inner {
   padding: 20px;
+}
+.masthead-inner ul,
+.masthead-inner .copy {
+  text-align: center;
 }
 .masthead-inner ul li {
   display: inline;
@@ -209,6 +213,7 @@ a:hover {
 }
 .masthead h1 {
   margin-top: 0;
+  text-align: center;
   /* font-family: "Abril Fatface"; */
 }
 .masthead .lead {
@@ -217,7 +222,12 @@ a:hover {
 .masthead a {
   /* color: #fff; */
 }
-
+.masthead h1 a:link,
+.masthead h1 a:hover,
+.masthead h1 a:visited,
+.masthead h1 a:active {
+  color: #454441;
+}
 /* Footer area of masthead */
 .colophon {
   margin-top: 20px;
@@ -350,7 +360,12 @@ a:hover {
     height: 1px;
   }
   .masthead .logo {
+    border-radius: 5px;
     width: 100%;
+  }
+  .masthead-inner ul,
+  .masthead-inner .copy {
+    text-align: left;
   }
   .masthead-inner ul li {
     display: block;
@@ -360,12 +375,7 @@ a:hover {
   }
   .masthead h1 {
     font-size: 32px;
-  }
-  .masthead h1 a:link,
-  .masthead h1 a:hover,
-  .masthead h1 a:visited,
-  .masthead h1 a:active {
-    color: #454441;
+    text-align: left;
   }
   .colophon {
     margin-top: 40px;
