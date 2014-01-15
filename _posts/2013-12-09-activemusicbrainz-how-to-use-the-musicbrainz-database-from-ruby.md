@@ -18,9 +18,9 @@ You need to initialize the library after connecting to the database. In rails yo
 
     ActiveMusicbrainz.init
 
-The line above will initialize all the model, one for each table, even if they are not defined in the library.
+The line above will initialize all the models, one for each table, even if they are not defined in the library.
 
-Now you can start playing with the musicbrainz database. You can use the `by_gid` method on all the Model that have a gid column, which defines the [MBID](http://wiki.musicbrainz.org/MusicBrainz_Identifier) of that resource:
+Now you can start playing with the musicbrainz database. You can use the `by_gid` method on all the Models that have a gid column, which defines the [MBID](http://wiki.musicbrainz.org/MusicBrainz_Identifier) of that resource:
 
     artist = ActiveMusicbrainz::Model::Artist.by_gid '9a709693-b4f8-4da9-8cc1-038c911a61be'
     => #<ActiveMusicbrainz::Model::Artist id: 24146, gid: "9a709693-b4f8-4da9-8cc1-038c911a61be", name: "Bonobo", sort_name: "Bonobo", begin_date_year: 1976, begin_date_month: 3, begin_date_day: 30, end_date_year: nil, end_date_month: nil, end_date_day: nil, type: 1, area: 221, gender: 1, comment: "UK electro artist Simon Green", edits_pending: 0, last_updated: "2013-05-13 11:00:09", ended: false, begin_area: nil, end_area: nil>
