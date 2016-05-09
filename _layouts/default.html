@@ -30,7 +30,7 @@
 
     <header class="masthead">
       <div class="masthead-inner">
-        <a href="/"><img src="/public/images/logo.jpg" class="logo" /></a>
+        <!-- <a href="/"><img src="/public/images/logo.jpg" class="logo" /></a> -->
         <h1><a href="/">Andrea Franz</a></h1>
 
         <div class="colophon">
@@ -44,11 +44,8 @@
             <li>
               <a href="http://twitter.com/gravityblast">@gravityblast</a>
             </li>
-            <li>
-              <a href="https://plus.google.com/+AndreaFranz">+AndreaFranz</a>
-            </li>
           </ul>
-          <p class="copy">&copy; 2013 {{ site.author.name }}</p>
+          <p class="copy">&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
         </div>
 
       </div>

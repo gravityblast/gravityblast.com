@@ -4,9 +4,15 @@ layout: default
 
 <div class="posts">
   <div class="post">
-    <h1>{{ page.title }}</h1>
+    <h1>
+      <a href="{{ page.url }}">
+        {{ page.title }}
+      </a>
+    </h1>
     <span class="post-date">{{ page.date | date_to_string }}</span>
-    {{ content }}
+    <div class="body">
+      {{ content }}
+    </div>
 
     <p class="tags">
       {% for tag in page.tags %}

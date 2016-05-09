@@ -6,5 +6,7 @@ author:
   email:      "andrea@gravityblast.com"
 markdown:     rdiscount
 permalink:    pretty
-pygments:     true
+highlighter:  true
 paginate:     5
+gems:
+  - jekyll-paginate

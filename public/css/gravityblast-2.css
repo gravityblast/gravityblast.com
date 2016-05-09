@@ -20,9 +20,40 @@ Learn more at http://andhyde.com or https://github.com/mdo/hyde.
 */
 
 
+/*
+ * Contents
+ *
+ * Body resets
+ * Custom type
+ * Links
+ * Masthead
+ * Container
+ * Posts
+ * Error page
+ * Pagination
+ * Themes
+ */
 
-/* Body resets
--------------------------------------------------- */
+
+@font-face {
+  font-family: 'Erika Type';
+  src: url('/public/fonts/Erika Type.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Courier-Prime';
+  src: url('/public/fonts/Courier-Prime.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*
+ * Body resets
+ *
+ * Update the foundational and global aspects of the page.
+ */
 
 * {
   -webkit-box-sizing: border-box;
@@ -37,19 +68,68 @@ body {
 }
 
 body {
-  font-family: "Courier New", courier, monospace;
+  font-family: 'Erika Type';
   font-size: 16px;
   line-height: 1.5;
-  color: #454441;
+  color: #0067A3;
   background-color: #fff;
+}
+@media (min-width: 990px) {
+  body {
+    font-size: 18px;
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0 0 10px;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
+  font-family: 'Courier-Prime';
 }
+
+.post h1 {
+  transform: rotate(0.5deg);
+  margin-left: -10px;
+}
+
+.post.even h1 {
+  transform: rotate(-0.5deg);
+  margin-left: -20px;
+}
+
+.post h1 a {
+  color: #fff;
+  background: #EC647E;
+  text-decoration: none;
+  padding: 3px;
+}
+
+.post h1 a:hover,
+.post h1 a:focus {
+  text-decoration: underline;
+}
+
+.post .body a,
+.post a.more {
+  background: #0067A3;
+  color: #fff;
+  padding: 0 3px;
+}
+
+.post a.more {
+  font-family: 'Courier-Prime';
+  padding: 3px;
+}
+
+.post .body a:hover,
+.post .body a:focus,
+.post a.more:hover,
+.post a.more:focus {
+  background: #EC647E;
+  color: #fff;
+}
+
 h1 {
   font-size: 40px;
 }
@@ -69,16 +149,9 @@ h4, h5, h6 {
 p {
   margin: 0 0 15px;
 }
-.lead {
-  font-size: 20px;
-  font-weight: 300;
-}
 
 ul, ol {
   margin-bottom: 15px;
-}
-li {
-  color: #888580;
 }
 
 hr {
@@ -90,7 +163,8 @@ hr {
 }
 
 strong {
-  color: #222;
+  color: #EC647E;
+  font-weight: 600;
 }
 
 abbr {
@@ -105,40 +179,47 @@ abbr {
   border-radius: 3px;
 }
 
-code {
-  white-space: nowrap;
-  margin: 0 2px;
-  padding: 0px 5px;
-  border: 1px solid #ddd;
-  background-color: #f8f8f8;
-  border-radius: 3px;
-}
-
+code,
 pre {
   font-family: Menlo, Monaco, "Courier New", monospace;
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  font-size: 13px;
-  line-height: 19px;
-  overflow: auto;
-  padding: 6px 10px;
-  border-radius: 3px;
-  word-break: break-all;
-  word-wrap: normal;
 }
-
-pre code {
-  margin: 0;
-  padding: 0;
-  border: none;
-  background: none;
+code {
+  padding: .25em .5em;
+  font-size: 85%;
+  color: #bf616a;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+}
+pre {
+  display: block;
+  margin: 0 0 14px;
+  padding: 15px 20px;
+  font-size: 16px;
+  line-height: 1.4;
   white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f9f9f9;
+}
+pre code {
+  padding: 0;
+  font-size: 100%;
+  color: inherit;
+  background-color: transparent;
+}
+.highlight {
+  margin-bottom: 15px;
+  border-radius: 4px;
+}
+.highlight pre {
+  margin-bottom: 0;
 }
 
 /* Quotes */
 blockquote {
-  padding: 0 0 0 20px;
-  margin: 15px 30px 15px 0;
+  padding: 5px 30px 5px 25px;
+  margin: 15px 0;
   border-left: 5px solid #eee;
 }
 blockquote p {
@@ -160,109 +241,189 @@ img {
 }
 
 
-/* Links
--------------------------------------------------- */
+/*
+ * Custom type
+ *
+ * Extend paragraphs with `.lead` for larger introductory text.
+ */
+
+.lead {
+  font-size: 20px;
+  font-weight: 300;
+}
+@media (min-width: 990px) {
+  .lead {
+    font-size: 24px;
+  }
+}
+
+
+/*
+ * Links
+ *
+ * No `:visited` state is required by default (browsers will use `a`). `:focus`
+ * is linked to `:hover` for basic accessibility.
+ */
 
 a {
-  color: #0084B4;
+  /* font-weight: 600; */
+  color: #EC647E;
   text-decoration: none;
 }
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
 }
 
 
-/* Scaffolding
--------------------------------------------------- */
+/*
+ * Masthead
+ *
+ * Sidebar banner for housing site name, intro, and colophon (footer).
+ */
 
-/* Header */
+/* Sidebar masthead */
 .masthead {
-  /* color: #fff; */
-  /* background-color: #2a2a2a; */
+  color: #fff;
+  background-color: #0067A3;
+  font-family: 'Courier-Prime';
 }
-.masthead .logo {
-  border: none;
-  width: 100px;
-  margin: 0 auto 20px;
-  border-radius: 50px;
-}
+
 .masthead-inner {
   padding: 20px;
 }
-.masthead-inner ul,
-.masthead-inner .copy {
-  text-align: center;
-}
-.masthead-inner ul li {
-  display: inline;
-}
-.masthead-inner ul li:after {
-  content: "/";
-}
-.masthead-inner ul li:last-child:after {
-  content: "";
-}
+
+/* Masthead content */
 .masthead h1 {
-  font-size: 28px;
   margin-top: 0;
-  text-align: center;
-  /* font-family: "Abril Fatface"; */
 }
 .masthead .lead {
   margin-bottom: 0;
 }
 .masthead a {
-  /* color: #fff; */
+  color: #fff;
 }
-.masthead h1 a:link,
-.masthead h1 a:hover,
-.masthead h1 a:visited,
-.masthead h1 a:active {
-  color: #454441;
+
+.masthead a:hover,
+.masthead a:focus {
+  color: #0067A3;
+  color: #fff;
 }
+
+.masthead .copy {
+  font-family: 'Erika Type';
+}
+
 /* Footer area of masthead */
 .colophon {
-  color: #7a7a7a;
+  margin-top: 20px;
+  color: rgba(255,255,255,.5);
 }
 .colophon-links {
   padding-left: 0;
   list-style: none;
-  margin: 0 0 10px;
+}
+.colophon-links li {
+  color: inherit;
+}
+
+/* Responsive masthead */
+@media (min-width: 768px) {
+  .masthead-inner {
+    padding: 40px;
+  }
+}
+@media (min-width: 990px) {
+  /* Fix the masthead to the side for impact and awesomeness */
+  .masthead {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 25%;
+    margin-bottom: 0;
+  }
+  .masthead-inner {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  .masthead-inner .copy {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .masthead h1 {
+    font-size: 64px;
+  }
+  .colophon {
+    margin-top: 40px;
+  }
 }
 
 
-/* Posts
--------------------------------------------------- */
+/* Container
+ *
+ * Align the contents of the site above the proper threshold with some margin-fu
+ * with a 25%-wide `.masthead`.
+ */
 
-/* Wrapper for all posts on homepage */
-.posts {
-  margin-left:  20px;
-  margin-right: 20px;
+.content {
+  padding: 40px 20px;
 }
+
+/* Center container in available real estate */
+@media (min-width: 990px) {
+  .content {
+    padding: 60px 0;
+  }
+  .container {
+    width: 55%;
+    margin-left: 35%;
+    margin-right: 10%;
+  }
+}
+
+
+/*
+ * Posts
+ *
+ * Each post is wrapped in `.post`. Used on default and post layouts.
+ */
 
 /* Single post */
 .post {
-  margin-top: 40px;
   margin-bottom: 40px;
 }
-.post .tags {
-  font-style: italic;
-  color: #9a9a9a;
-  font-size: 14px;
+@media (min-width: 990px) {
+  .post {
+    margin-bottom: 60px;
+  }
 }
+
+/* Meta data line below post title */
 .post-date {
   display: block;
   margin: -10px 0 10px;
-  color: #9a9a9a;
+  font-weight: bold;
+  color: #0067A3;
 }
 
 /* Related posts */
 .related {
-  padding-top: 40px;
+  padding-top: 20px;
+  padding-bottom: 40px;
   border-top: 1px solid #eee;
 }
 .related-posts {
+  padding-left: 0;
   list-style: none;
+}
+.related-posts h3 {
+  margin-top: 0;
 }
 .related-posts li small {
   font-size: 75%;
@@ -273,21 +434,16 @@ a:hover {
   text-decoration: none;
 }
 .related-posts li a:hover small {
-  color: #000;
+  color: inherit;
 }
 
 
-/* Error pages (404)
--------------------------------------------------- */
-
-.fourohfour {
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-
-/* Pagination
--------------------------------------------------- */
+/*
+ * Pagination
+ *
+ * Super lightweight (HTML-wise) blog pagination. `span`s are provide for when
+ * there are no more previous or next posts to show.
+ */
 
 .pagination {
   overflow: hidden; /* clearfix */
@@ -297,13 +453,18 @@ a:hover {
   text-align: center;
   border-top: 1px solid #eee;
 }
+/* Pagination should float when space is plentiful */
+@media (min-width: 990px) {
+  .pagination {
+    margin-bottom: 60px;
+    border: 1px solid #eee;
+  }
+}
+
 .pagination a,
 .pagination span {
   float: left;
   width: 50%;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
   padding: 20px;
 }
 .pagination a:first-child,
@@ -315,145 +476,102 @@ a:hover {
   background-color: #f5f5f5;
 }
 
-.copy {
-  font-size: 14px;
-}
 
-/* Responsive
--------------------------------------------------- */
-
-@media (min-width: 768px) {
-  .masthead-inner {
-    padding: 20px 40px 0;
-  }
-  .posts {
-    margin-left: 40px;
-    margin-right: 40px;
-  }
-}
+/*
+ * Reverse layout
+ *
+ * Flip the orientation of the page by placing the `.masthead` on the right.
+ */
 
 @media (min-width: 990px) {
-
-  body {
-    font-size: 18px;
+  .layout-reverse .masthead {
+    left: auto;
+    right: 0;
   }
-  .lead {
-    font-size: 14px;
-  }
-
-  /* Center container in available real estate */
-  .container {
-    margin-left: 35%;
-    margin-right: 10%;
-    width: 55%;
-  }
-
-  /* Fix the masthead to the side for impact and awesomeness */
-  .masthead {
-    position: fixed;
-    top: 10px;
-    left: 0;
-    width: 25%;
-    height: 1px;
-  }
-  .masthead-inner {
-    padding-top: 60px;
-  }
-  .masthead .logo {
-    border-radius: 5px;
-    width: 100%;
-  }
-  .masthead-inner ul,
-  .masthead-inner .copy {
-    text-align: left;
-  }
-  .masthead-inner ul li {
-    display: block;
-  }
-  .masthead-inner ul li:after {
-    content: "";
-  }
-  .masthead h1 {
-    text-align: left;
-  }
-
-  /* Remove mobile device padding from list of posts */
-  .posts {
-    margin-left: 0;
-    margin-right: 0;
-  }
-  /* Increase space between posts */
-  .post {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-
-  /* Make pagination stand alone */
-  .pagination {
-    margin-bottom: 60px;
-    border: 1px solid #eee;
+  .layout-reverse .container {
+    margin-left: 10%;
+    margin-right: 35%;
   }
 }
 
-/* highlight */
-.highlight  { background: #ffffff; }
-.highlight code .c { color: #999988; font-style: italic } /* Comment */
-.highlight code .err { color: #a61717; background-color: #e3d2d2 } /* Error */
-.highlight code .k { font-weight: bold } /* Keyword */
-.highlight code .o { font-weight: bold } /* Operator */
-.highlight code .cm { color: #999988; font-style: italic } /* Comment.Multiline */
-.highlight code .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
-.highlight code .c1 { color: #999988; font-style: italic } /* Comment.Single */
-.highlight code .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
-.highlight code .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
-.highlight code .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
-.highlight code .ge { font-style: italic } /* Generic.Emph */
-.highlight code .gr { color: #aa0000 } /* Generic.Error */
-.highlight code .gh { color: #999999 } /* Generic.Heading */
-.highlight code .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
-.highlight code .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
-.highlight code .go { color: #888888 } /* Generic.Output */
-.highlight code .gp { color: #555555 } /* Generic.Prompt */
-.highlight code .gs { font-weight: bold } /* Generic.Strong */
-.highlight code .gu { color: #aaaaaa } /* Generic.Subheading */
-.highlight code .gt { color: #aa0000 } /* Generic.Traceback */
-.highlight code .kc { font-weight: bold } /* Keyword.Constant */
-.highlight code .kd { font-weight: bold } /* Keyword.Declaration */
-.highlight code .kp { font-weight: bold } /* Keyword.Pseudo */
-.highlight code .kr { font-weight: bold } /* Keyword.Reserved */
-.highlight code .kn { font-weight: bold } /* Keyword.Reserved */
-.highlight code .kt { color: #445588; font-weight: bold } /* Keyword.Type */
-.highlight code .m { color: #009999 } /* Literal.Number */
-.highlight code .s { color: #d14 } /* Literal.String */
-.highlight code .na { color: #008080 } /* Name.Attribute */
-.highlight code .nb { color: #0086B3 } /* Name.Builtin */
-.highlight code .nc { color: #445588; font-weight: bold } /* Name.Class */
-.highlight code .no { color: #008080 } /* Name.Constant */
-.highlight code .ni { color: #800080 } /* Name.Entity */
-.highlight code .ne { color: #990000; font-weight: bold } /* Name.Exception */
-.highlight code .nf { color: #990000; font-weight: bold } /* Name.Function */
-.highlight code .nn { color: #555555 } /* Name.Namespace */
-.highlight code .nt { color: #000080 } /* Name.Tag */
-.highlight code .nv { color: #008080 } /* Name.Variable */
-.highlight code .ow { font-weight: bold } /* Operator.Word */
-.highlight code .w { color: #bbbbbb } /* Text.Whitespace */
-.highlight code .mf { color: #009999 } /* Literal.Number.Float */
-.highlight code .mh { color: #009999 } /* Literal.Number.Hex */
-.highlight code .mi { color: #009999 } /* Literal.Number.Integer */
-.highlight code .mo { color: #009999 } /* Literal.Number.Oct */
-.highlight code .sb { color: #d14 } /* Literal.String.Backtick */
-.highlight code .sc { color: #d14 } /* Literal.String.Char */
-.highlight code .sd { color: #d14 } /* Literal.String.Doc */
-.highlight code .s2 { color: #d14 } /* Literal.String.Double */
-.highlight code .se { color: #d14 } /* Literal.String.Escape */
-.highlight code .sh { color: #d14 } /* Literal.String.Heredoc */
-.highlight code .si { color: #d14 } /* Literal.String.Interpol */
-.highlight code .sx { color: #d14 } /* Literal.String.Other */
-.highlight code .sr { color: #009926 } /* Literal.String.Regex */
-.highlight code .s1 { color: #d14 } /* Literal.String.Single */
-.highlight code .ss { color: #990073 } /* Literal.String.Symbol */
-.highlight code .bp { color: #999999 } /* Name.Builtin.Pseudo */
-.highlight code .vc { color: #008080 } /* Name.Variable.Class */
-.highlight code .vg { color: #008080 } /* Name.Variable.Global */
-.highlight code .vi { color: #008080 } /* Name.Variable.Instance */
-.highlight code .il { color: #009999 } /* Literal.Number.Integer.Long */
+
+/*
+ * Themes
+ *
+ * As of v1.1, Hyde includes optional themes to color the sidebar and links
+ * within blog posts. To use, add the class of your choosing to the `body`.
+ */
+
+/* Base16 (http://chriskempson.github.io/base16/#default) */
+
+/* Red */
+.theme-base-08 .masthead {
+  background-color: #ac4142;
+}
+.theme-base-08 .container a,
+.theme-base-08 .related-posts li a:hover {
+  color: #ac4142;
+}
+
+/* Orange */
+.theme-base-09 .masthead {
+  background-color: #d28445;
+}
+.theme-base-09 .container a,
+.theme-base-09 .related-posts li a:hover {
+  color: #d28445;
+}
+
+/* Yellow */
+.theme-base-0a .masthead {
+  background-color: #f4bf75;
+}
+.theme-base-0a .container a,
+.theme-base-0a .related-posts li a:hover {
+  color: #f4bf75;
+}
+
+/* Green */
+.theme-base-0b .masthead {
+  background-color: #90a959;
+}
+.theme-base-0b .container a,
+.theme-base-0b .related-posts li a:hover {
+  color: #90a959;
+}
+
+/* Cyan */
+.theme-base-0c .masthead {
+  background-color: #75b5aa;
+}
+.theme-base-0c .container a,
+.theme-base-0c .related-posts li a:hover {
+  color: #75b5aa;
+}
+
+/* Blue */
+.theme-base-0d .masthead {
+  background-color: #6a9fb5;
+}
+.theme-base-0d .container a,
+.theme-base-0d .related-posts li a:hover {
+  color: #6a9fb5;
+}
+
+/* Magenta */
+.theme-base-0e .masthead {
+  background-color: #aa759f;
+}
+.theme-base-0e .container a,
+.theme-base-0e .related-posts li a:hover {
+  color: #aa759f;
+}
+
+/* Brown */
+.theme-base-0f .masthead {
+  background-color: #8f5536;
+}
+.theme-base-0f .container a,
+.theme-base-0f .related-posts li a:hover {
+  color: #8f5536;
+}
