@@ -501,7 +501,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
-.scroll-down {
+.scroll-down.arrow {
     display: block;
     position: absolute;
     z-index: 100;
