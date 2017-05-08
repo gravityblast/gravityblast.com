@@ -1,12 +1,20 @@
-title:        Gravityblast
-tagline:      "by Andrea Franz"
-url:          http://gravityblast.com
-author:
-  name:       "Andrea Franz"
-  email:      "andrea@gravityblast.com"
-markdown:     rdiscount
-permalink:    pretty
-highlighter:  rouge
-paginate:     5
-gems:
-  - jekyll-paginate
+name: Gravityblast
+description: by Andrea Franz
+meta_description: "dev blog by Andrea Franz"
+
+permalink: pretty
+markdown: kramdown
+highlighter: pygments
+paginate: 5
+baseurl: /
+domain_name: 'http://gravityblast.com'
+google_analytics: 'UA-129369-13'
+gems: [jekyll-paginate]
+
+author:         'Andrea Franz'
+author_email:   'andrea@gravityblast.com'
+
+url:             'http://gravityblast.com'
+rss_title:       'Andrea Franz'
+rss_description: 'development blog by Andrea Franz'
+

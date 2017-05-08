@@ -1,6 +1,7 @@
 ---
 layout: post
 title: ActiveMusicbrainz - How to use the Musicbrainz database from Ruby
+cover: /assets/images/covers/urban-astronaut-1500.jpg
 tags:
 - ruby
 - activerecord

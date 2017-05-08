@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Build and restart your Go web app with Fresh
+cover: /assets/images/covers/suzzle-1600.jpg
 tags:
 - go
 - golang
