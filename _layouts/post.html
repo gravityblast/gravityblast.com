@@ -1,6 +1,6 @@
 ---
 layout: default
-disqus: false
+disqus: true
 archive: false
 post_class: post-template
 ---
@@ -12,25 +12,20 @@ post_class: post-template
     </nav>
 </header>
 
-<main class="content" role="main">
+<main class="content single-post" role="main">
 
     <article class="post">
 
-        <header class="post-header">
-            <div class="post-footer">
-                {% if site.author %}
-                    <figure class="author-image">
-                        <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.png)">
-                        <span class="hidden">{{site.author}}'s Picture</span></a>
-                    </figure>
-                {% endif %}
-            </div>
-
+        <header class="post-header clearfix">
             <h1 class="post-title">{{ page.title }}</h1>
             <section class="post-meta">
+                {% if site.author %}
+                    <img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
+                    {{ site.author }}
+                {% endif %}
                 <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-                {% if page.categories.size > 0 %}
-                    {{ page.categories | array_to_sentence_string | prepend: 'on ' }}
+                {% if page.tags.size > 0 %}
+                    {{ page.tags | array_to_sentence_string | prepend: 'on ' }}
                 {% endif %}
             </section>
         </header>

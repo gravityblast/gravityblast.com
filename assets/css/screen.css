@@ -212,24 +212,24 @@ h1 {
 }
 
 h2 {
-    font-size: 3.6rem;
+    font-size: 2.6rem;
     letter-spacing: -1px;
 }
 
 h3 {
-    font-size: 3rem;
+    font-size: 2.3rem;
 }
 
 h4 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
 }
 
 h5 {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 h6 {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 a {
@@ -338,15 +338,14 @@ pre {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     margin: 0 0 1.75em 0;
-    border: #E3EDF3 1px solid;
     width: 100%;
-    padding: 10px;
+    padding: 16px;
     font-family: Inconsolata, monospace, sans-serif;
     font-size: 0.9em;
     white-space: pre;
-    overflow: auto;
     background: #F7FAFB;
     border-radius: 3px;
+    overflow: auto;
 }
 
 pre code, tt {
@@ -356,6 +355,10 @@ pre code, tt {
     background: transparent;
     border: none;
     padding: 0;
+
+    overflow-x: scroll;
+    word-wrap: normal;
+    white-space: pre;
 }
 
 kbd {
@@ -773,6 +776,10 @@ body:not(.post-template) .post-title {
     font-size: 1.5rem;
     line-height: 2.2rem;
     color: #9EABB3;
+}
+
+.single-post .post .post-meta {
+    margin: 1.75rem 0;
 }
 
 .author-thumb {
