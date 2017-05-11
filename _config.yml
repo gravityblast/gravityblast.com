@@ -6,10 +6,11 @@ permalink: pretty
 markdown: kramdown
 highlighter: rouge
 paginate: 5
-baseurl: /
 domain_name: 'http://gravityblast.com'
 google_analytics: 'UA-129369-13'
-gems: [jekyll-paginate]
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
 
 author:         'Andrea Franz'
 author_email:   'andrea@gravityblast.com'
