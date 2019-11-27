@@ -20,8 +20,8 @@
 
     <meta name="twitter:card" content="summary_large_image"></meta>
     <meta property="og:title" content="{{ page.title | default: site.title }}" />
-    <meta property="og:url" content="{{ page.url | default: site.url }}" />
-    <meta property="og:image" content="{{ page.cover | site.cover}}" />
+    <meta property="og:url" content="{{ page.url | default: site.url | absolute_url }}" />
+    <meta property="og:image" content="{{ page.cover | default: site.cover | absolute_url }}" />
 </head>
 <body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
 
