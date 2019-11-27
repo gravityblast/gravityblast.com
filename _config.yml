@@ -1,6 +1,8 @@
 name: Gravityblast
 description: by Andrea Franz
 meta_description: "dev blog by Andrea Franz"
+title: "Gravityblast - dev blog by Andrea Franz"
+cover: /assets/images/covers/urban-astronaut-1500.jpg
 
 permalink: pretty
 markdown: kramdown

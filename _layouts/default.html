@@ -18,17 +18,18 @@
     <!-- Customisation  -->
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
 
+    <meta name="twitter:card" content="summary_large_image"></meta>
+    <meta property="og:title" content="{{ page.title | default: site.title }}" />
+    <meta property="og:url" content="{{ page.url | default: site.url }}" />
+    <meta property="og:image" content="{{ page.cover | site.cover}}" />
 </head>
 <body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
 
     {{ content }}
     <footer class="site-footer clearfix">
       <section class="copyright">
-        <a href="{{ site.baseurl }}">{{ site.author }}</a> &copy;
-              {{date format="YYYY"}} &bull; All rights reserved.
-      </section>
-      <section class="poweredby">Made with Jekyll using
-        <a href="http://github.com/rosario/kasper">Kasper theme</a>
+        &copy; {{site.time | date: "%Y"}} &bull;
+        <a href="{{ site.url }}">{{ site.author }}</a>
       </section>
     </footer>
 

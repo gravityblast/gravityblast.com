@@ -1,7 +1,10 @@
+.bundle
+.jekyll-cache
 # Ignore docs files
 _gh_pages
 _site
 .ruby-version
+vendor
 
 # Numerous always-ignore extensions
 *.diff
