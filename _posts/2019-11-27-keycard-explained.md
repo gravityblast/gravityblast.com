@@ -32,7 +32,7 @@ an API allows the user to use any valid derivation path to derive a key
 that can be used to sign 32 bytes of data after authenticating with a PIN.
 
 The **Cash applet** is a simplified version of the Keycard applet; at installation time a normal (not extended) key is generated and it remains on the card;
-it doesn't need to be paired or initialized with another device and can be used straight away to sign data.
+it doesn't need to be paired with another device and can be used straight away to sign data, without setting a secure channel.
 
 ---
 
