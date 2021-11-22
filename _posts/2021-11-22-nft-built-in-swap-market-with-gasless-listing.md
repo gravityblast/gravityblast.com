@@ -65,7 +65,7 @@ We named it [CyberTarot](https://cybertarotnft.com), and Royb started producing 
 with more than 450 drawings that together built a collection of 580 unique traits and 10K
 CyberTarot Minor Arcana.
 
-Each one of these Minoir Arcana, amongst its many traits, has **a rank and a suit** based on the token id.
+Each one of these Minor Arcana, amongst its many traits, has **a rank and a suit** based on the token id.
 And since the token id is available to the **Swap Market**,
 they can be used as **swap rules** as described above.
 By swapping cards, collectors will be able allow to create **mini-decks** with cards ranked from 0 to 9,
