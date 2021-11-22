@@ -42,8 +42,8 @@ The rule can be a simple bitstring like:
 * `1011` (swappable only with trait A, B, **or** D)
 
 I like this idea because it adds more dynamics for collectors, even if it can be very specific to each project and cannot really be
-used as a standard. Nevertheless, I decided to start a new [project](https://cybertarotnft.com) to test it, and my friend and favourite artist [royb](https://twitter.com/ROYB_Art)
-joined the team.
+used as a standard. Nevertheless, I decided to start a new [project](https://cybertarotnft.com) to test it,
+together with my friend and favourite artist [royb](https://twitter.com/ROYB_Art).
 
 For both of us this has been a side project, and therefore it took many months to be completed,
 but in this long journey we learnt a lot and finally we are happy to announce that this new idea will be launched soon!
@@ -74,7 +74,7 @@ or **royal** mini-deck if they follow the same suit.
 ![Cyber Tarot Preview](/assets/images/cyber-tarot/CyberTarotNFT-full.gif)
 
 The second phase of the project will be the deployment of the **22** fractionalized
-Major Arcana whose shares can be minted only by owning a mini-deck.
+Major Arcana, whose shares can be minted only by owning a mini-deck.
 
 ![Cyber Tarot Drawings](/assets/images/cyber-tarot/cyber-tarot-1.jpg)
 
