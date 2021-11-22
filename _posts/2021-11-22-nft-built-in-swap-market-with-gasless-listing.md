@@ -11,7 +11,7 @@ tags:
 
 More than a year ago I was working on a [Token Redeem dApp](https://github.com/status-im/keycard-redeem)
 for the [Keycard Hardware Wallet](https://keycard.tech/) that supported both **ERC20** and **ERC721** tokens.
-While working on that I had the idea of adding some **gamification** to a startdard **ERC721 contract**:
+While working on that I had the idea of adding some **gamification** to a standard **ERC721 contract**:
 something similar to what I used to do when I was younger, **swapping NBA cards with friends** to collect all the players of my favourite team.
 
 If we think of the full collection of those cards as an ERC721 collection, the players' team can be thought as a **trait type** of
