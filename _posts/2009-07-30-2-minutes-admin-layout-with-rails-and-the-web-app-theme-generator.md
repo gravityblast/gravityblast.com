@@ -11,7 +11,7 @@ published: true
 meta:
   _edit_last: '1'
 ---
-Many people found out a rails generator inside my <a href="http://github.com/pilu/web-app-theme">web-app-theme</a> project and asked me how to use it.
+Many people found out a rails generator inside my <a href="http://github.com/gravityblast/web-app-theme">web-app-theme</a> project and asked me how to use it.
 Here an example, starting from scratch with a new rails app that manages music Albums.
 
     rails cool_albums
@@ -21,11 +21,11 @@ Here an example, starting from scratch with a new rails app that manages music A
 
 After creating the first controller with a scaffold or with your hands, start creating a theme:
 
-    script/plugin install git://github.com/pilu/web-app-theme.git
+    script/plugin install git://github.com/gravityblast/web-app-theme.git
     script/generate theme application --app_name="My Cool Albums" --theme="drastic-dark"
 
 The first argument ("application") is the name of the layout that the generator will create (application.html.erb).
-The <strong>--app_name</strong> option specifies the name used as page title, and with the <strong>--theme</strong> specifies which theme to use among all the <a href="http://pilu.github.com/web-app-theme/" title="Web App Theme Demo">available themes</a> inside the plugin.
+The <strong>--app_name</strong> option specifies the name used as page title, and with the <strong>--theme</strong> specifies which theme to use among all the <a href="http://gravityblast.github.com/web-app-theme/" title="Web App Theme Demo">available themes</a> inside the plugin.
 
 Now remove the default index.html created by rails and the layout created by the scaffold:
 
@@ -71,4 +71,4 @@ Ok, restart your server and you are done.
 
 <img src="/wp-content/uploads/2009/07/web-app-theme-example-2.jpg" />
 
-Feel free to fork the project from <a href="http://github.com/pilu/web-app-theme/tree/master">github</a> to improve the generator or to add a new theme.
+Feel free to fork the project from <a href="http://github.com/gravityblast/web-app-theme/tree/master">github</a> to improve the generator or to add a new theme.

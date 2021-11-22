@@ -38,4 +38,4 @@ If you want you can set your musiXmatch API KEY as an environment variable, and 
 
     export MUSIX_MATCH_API_KEY="YOUR_API_KEY"
 
-You can find the source code on <a href="https://github.com/pilu/musixmatch-node" title="musiXmatch node">github</a>.
+You can find the source code on <a href="https://github.com/gravityblast/musixmatch-node" title="musiXmatch node">github</a>.

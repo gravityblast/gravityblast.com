@@ -8,7 +8,7 @@ tags:
 - musicbrainz
 ---
 
-If you need to use [Ruby](https://www.ruby-lang.org) to access the [Musicbrainz database](http://musicbrainz.org/doc/MusicBrainz_Database) you can use [ActiveMusicbrainz](https://github.com/pilu/active_musicbrainz).
+If you need to use [Ruby](https://www.ruby-lang.org) to access the [Musicbrainz database](http://musicbrainz.org/doc/MusicBrainz_Database) you can use [ActiveMusicbrainz](https://github.com/gravityblast/active_musicbrainz).
 ActiveMusicbrainz is a library based on [ActiveRecord](http://edgeguides.rubyonrails.org/active_record_basics.html) that automatically creates one model for each Musicbrainz table and defines the main associations between them.
 
 If you want to use it in a rails application, add the gem dependency to the Gemfile:
@@ -55,4 +55,4 @@ Now you can start playing with the musicbrainz database. You can use the `by_gid
     artist.release_groups.first.releases.first.mediums.first.format
     => #<ActiveMusicbrainz::Model::MediumFormat id: 1, name: "CD", parent: nil, child_order: 0, year: 1982, has_discids: true>
 
-Check out the project on [Github](https://github.com/pilu/active_musicbrainz) for more info.
+Check out the project on [Github](https://github.com/gravityblast/active_musicbrainz) for more info.

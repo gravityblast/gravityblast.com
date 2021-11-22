@@ -8,7 +8,7 @@ tags:
 - heroku
 ---
 
-It's really easy to deploy a Go application based on the [Traffic](https://github.com/pilu/traffic) web framework on [Heroku](https://www.heroku.com/).
+It's really easy to deploy a Go application based on the [Traffic](https://github.com/gravityblast/traffic) web framework on [Heroku](https://www.heroku.com/).
 Let's start with a simple example.
 
 First of all, we need a simple Traffic app:
@@ -24,7 +24,7 @@ Create the `main.go` file with the following content:
 package main
 
 import (
-  "github.com/pilu/traffic"
+  "github.com/gravityblast/traffic"
 )
 
 func hello(w traffic.ResponseWriter, r *traffic.Request) {

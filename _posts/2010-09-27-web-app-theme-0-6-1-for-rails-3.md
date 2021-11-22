@@ -11,6 +11,6 @@ meta:
   _edit_last: '1'
   _wp_old_slug: ''
 ---
-The new version of <a href="http://github.com/pilu/web-app-theme">web-app-theme</a> finally supports Rails 3. Check out the <a href="http://github.com/pilu/web-app-theme">repository on github</a>. It also supports <a href="http://haml-lang.com/">Haml</a> template generation using html2haml, like <a href="http://github.com/plataformatec/devise">devise</a> does.
+The new version of <a href="http://github.com/gravityblast/web-app-theme">web-app-theme</a> finally supports Rails 3. Check out the <a href="http://github.com/gravityblast/web-app-theme">repository on github</a>. It also supports <a href="http://haml-lang.com/">Haml</a> template generation using html2haml, like <a href="http://github.com/plataformatec/devise">devise</a> does.
 
 <p><strong>UPDATE</strong>: the version 0.6.2 fixes a bug in the Haml generation when you use form_for blocks.</p>
