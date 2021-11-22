@@ -74,7 +74,7 @@ or **royal** mini-deck if they follow the same suit.
 ![Cyber Tarot Preview](/assets/images/cyber-tarot/CyberTarotNFT-full.gif)
 
 The second phase of the project will be the deployment of the **22** fractionalized
-Major Arcana shares can be minted only by owning a mini-deck.
+Major Arcana whose shares can be minted only by owning a mini-deck.
 
 ![Cyber Tarot Drawings](/assets/images/cyber-tarot/cyber-tarot-1.jpg)
 
