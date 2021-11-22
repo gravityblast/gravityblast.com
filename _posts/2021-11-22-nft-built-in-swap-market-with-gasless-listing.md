@@ -2,7 +2,7 @@
 layout: post
 title: NFT built-in Swap Market with gasless listing
 cover: /assets/images/covers/cyber.jpg
-share_image: /assets/images/cyber-tarot/CyberTarotNFT-full.gif
+share_image: /assets/images/cyber-tarot/share.jpg
 tags:
 - nft
 - ethereum
