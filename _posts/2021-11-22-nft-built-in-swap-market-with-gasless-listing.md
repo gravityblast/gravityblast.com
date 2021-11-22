@@ -42,7 +42,7 @@ The rule can be a simple bitstring like:
 * `1011` (swappable only with trait A, B, **or** D)
 
 I like this idea because it adds more dynamics for collectors, event if it can be very specific to each project and cannot really be
-used a standard. Nevertheless, I decided to start a new [project](https://cybertarotnft.com) to test it, and my friend and favourite artist [royb](https://twitter.com/ROYB_Art)
+used as a standard. Nevertheless, I decided to start a new [project](https://cybertarotnft.com) to test it, and my friend and favourite artist [royb](https://twitter.com/ROYB_Art)
 joined the team.
 
 For both of us this has been a side project, and therefore it took many months to be completed,
