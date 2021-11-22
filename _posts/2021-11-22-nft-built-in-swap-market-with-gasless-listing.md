@@ -43,7 +43,7 @@ The rule can be a simple bitstring like:
 
 I like this idea because it adds more dynamics for collectors, even if it can be very specific to each project and cannot really be
 used as a standard. Nevertheless, I decided to start a new [project](https://cybertarotnft.com) to test it,
-together with my friend and favourite artist [ROYB](https://twitter.com/ROYB_Art).
+together with my friend and favourite artist [Royb](https://twitter.com/ROYB_Art).
 
 For both of us this has been a side project, and therefore it took many months to be completed,
 but in this long journey we learnt a lot and finally we are happy to announce that this new idea will be launched soon!
