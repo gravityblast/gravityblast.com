@@ -51,7 +51,7 @@ but in this long journey we learnt a lot and finally we are happy to announce th
 ## CyberTarot NFT
 
 When he joined the team, Royb was working on some artwork inspired by the Tarot Major Arcana cards, so we decided to build our project along
-the samne lines as the [Tarot Cards Games](https://en.wikipedia.org/wiki/Tarot_card_games).
+the same lines as the [Tarot Cards Games](https://en.wikipedia.org/wiki/Tarot_card_games).
 
 This initial concept was conceived with special focus on the Art itself and on the Swap Market in order to convey some initial level of gamification,
 while leaving the development of a full game for the future,
