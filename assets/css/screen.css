@@ -138,16 +138,6 @@ table { border-collapse: collapse; border-spacing: 0; }
 .icon-feed:before {
     content: "\f601";
 }
-.icon-twitter:before {
-    content: "\f602";
-    font-size: 1.1em;
-}
-.icon-google-plus:before {
-    content: "\f603";
-}
-.icon-facebook:before {
-    content: "\f604";
-}
 .icon-arrow-left:before {
     content: "\f605";
 }

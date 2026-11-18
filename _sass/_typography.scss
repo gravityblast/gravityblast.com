@@ -608,3 +608,14 @@ table th {
     border-right: 0;
   }
 }
+
+// Share icons are inline SVGs (the theme icon font has no X or LinkedIn).
+.post-footer .share a {
+  line-height: 1;
+  vertical-align: middle;
+  margin-right: 1rem;
+}
+
+.post-footer .share :is(.share-x, .share-linkedin) svg {
+  display: block;
+}
