@@ -9,7 +9,7 @@ markdown: kramdown
 highlighter: rouge
 paginate: 10
 domain_name: 'http://gravityblast.com'
-google_analytics: 'UA-129369-13'
+google_analytics: 'G-Q8DV97QGST'
 gems:
   - jekyll-paginate
   - jekyll-sitemap
