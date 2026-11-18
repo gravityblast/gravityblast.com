@@ -7,8 +7,3 @@
 @use "fonts";
 @use "syntax";
 @use "typography";
-
-/* We need to add display:inline in order to align the '>>' of the 'read more' link */
-.post-excerpt p {
-	display:inline;
-}

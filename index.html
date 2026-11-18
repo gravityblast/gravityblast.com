@@ -1,7 +1,6 @@
 ---
 layout: default
 cover: /assets/images/covers/urban-astronaut-dark-1600.jpg
-about: about
 ---
 
 <header class="main-header {% if page.cover %}" style="background-image: url({{ page.cover }}) {%else%}no-cover{% endif %}">
@@ -11,18 +10,15 @@ about: about
                     <img src="{{ page.logo }}" alt="Blog Logo" />
                 </a>
             {% endif %}
-        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}feed.xml">Subscribe</a>
+        <a class="subscribe-button icon-feed" href="{{ site.baseurl }}/feed.xml">Subscribe</a>
+        <a class="nav-link" href="{{ site.baseurl }}/about/">About</a>
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">{{ site.author }}</h1>
-            <h2 class="page-description">
-                <a href="#content" class="scroll-down">Blog posts</a>
-                {% if page.about %} <a href='{{ site.baseurl }}{{ page.about }}'> About me </a> {% endif %}
-            </h2>
+            <h1 class="page-title">{{ site.name | downcase }}</h1>
+            <p class="page-description">{{ site.description }}</p>
         </div>
     </div>
-    <a class="scroll-down arrow icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
 
@@ -35,25 +31,10 @@ about: about
 
     {% for post in paginator.posts %}
 
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        </header>
-        <section class="post-excerpt">
-            {{ post.excerpt }} <a class="read-more" href="{{ post.url }}">&raquo;</a>
-        </section>
-        <footer class="post-meta">
-            {% if site.author %}
-                <img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
-                {{ site.author }}
-            {% endif %}
-            {% if post.categories.size > 0 %}
-                {{ post.categories | array_to_sentence_string | prepend: 'on ' }}
-            {% endif %}
-            <time class="post-date" datetime="{{ post.date | date:"%Y-%m-%d" }}">
-                {{ post.date | date_to_string }}
-            </time>
-        </footer>
+    <article class="post post-entry">
+        <time class="entry-date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%-d %B %Y" }}</time>
+        <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+        <div class="post-excerpt">{{ post.excerpt }}</div>
     </article>
 
     {% endfor %}

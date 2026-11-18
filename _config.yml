@@ -7,7 +7,7 @@ cover: /assets/images/covers/urban-astronaut-1500.jpg
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
-paginate: 5
+paginate: 10
 domain_name: 'http://gravityblast.com'
 google_analytics: 'UA-129369-13'
 gems:
