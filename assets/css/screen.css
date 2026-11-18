@@ -876,12 +876,6 @@ body:not(.post-template) .post-title {
     border: none;
 }
 
-/* Stop .full-img from creating horizontal scroll - slight hack due to
-   imperfections with browser width % calculations and rounding */
-.post-template .content {
-    overflow: hidden;
-}
-
 /* Tweak the .post wrapper style */
 .post-template .post {
     margin-top: 0;
@@ -907,14 +901,6 @@ body:not(.post-template) .post-title {
     height: auto;
     margin: 0 auto;
     padding: 0.6em 0;
-}
-
-/* Break out larger images to be wider than the main text column
-   the class is applied with jQuery */
-.post-content .full-img {
-    width: 126%;
-    max-width: none;
-    margin: 0 -13%;
 }
 
 /* The author credit area after the post */
@@ -1642,14 +1628,6 @@ body:not(.post-template) .post-title {
 
     .post-content img {
         padding: 0;
-    }
-
-    .post-content .full-img {
-        width: auto;
-        width: calc(100% + 32px); /* expand with to image + margins */
-        margin: 0 -16px; /* get rid of margins */
-        min-width: 0;
-        max-width: 112%; /* fallback when calc doesn't work */
     }
 
     .post-meta {

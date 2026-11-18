@@ -125,6 +125,87 @@ hr {
   text-transform: uppercase;
 }
 
+// ---------------------------------------------------------------- covers
+
+// Home: cover stays a background behind the name, but no longer fills the screen.
+.home-template .main-header {
+  height: 62vh;
+  min-height: 380px;
+  max-height: 720px;
+}
+
+// Posts/pages: slim nav on the paper, cover shown whole below the title.
+.site-header .main-nav {
+  margin: 0 0 4rem;
+  padding: 2.4rem 3.2rem;
+}
+
+.site-header .back-button,
+.site-header .subscribe-button {
+  color: $muted;
+  background: transparent;
+  border: 1px solid $rule;
+  &:hover {
+    color: $ink;
+    border-color: $faint;
+  }
+}
+
+// Single posts and pages lay out as a grid with named columns:
+//
+//   | full | wide |      content       | wide | full |
+//           <---------- 110rem ---------->
+//                  <---- 71rem ---->
+//
+// Everything sits in `content` by default; elements opt into `wide` or `full`.
+// The side tracks collapse on narrow screens, leaving a 1.6rem gutter.
+$content-width: 71rem;
+$wide-width:    110rem;
+$gutter:        1.6rem;
+
+.post-template .post {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax($gutter, 1fr)
+    [wide-start] minmax(0, ($wide-width - $content-width) * 0.5)
+    [content-start] min(#{$content-width}, 100% - #{$gutter * 2}) [content-end]
+    minmax(0, ($wide-width - $content-width) * 0.5) [wide-end]
+    minmax($gutter, 1fr) [full-end];
+  width: auto;
+  max-width: none;
+  margin: 0;
+
+  > * { grid-column: content; min-width: 0; }
+  > .post-cover { grid-column: wide; }
+
+  // The post body inherits the same columns (subgrid), so standalone images
+  // and figures inside it can use `wide` too. Small images keep their size.
+  > .post-content {
+    grid-column: full;
+    display: grid;
+    grid-template-columns: subgrid;
+
+    > * { grid-column: content; min-width: 0; }
+    > p:has(> img:only-child),
+    > figure { grid-column: wide; }
+  }
+}
+
+.post-cover {
+  margin: 0 0 5.6rem;
+
+  img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 72vh;   // tall images shrink instead of being cropped
+    margin: 0 auto;
+    border-radius: 6px;
+  }
+}
+
+
 // ---------------------------------------------------------------- post list (home)
 
 .post {
@@ -191,7 +272,7 @@ body:not(.post-template) .post-title {
 // ---------------------------------------------------------------- single post
 
 .post-template .post-header {
-  margin-bottom: 4.8rem;
+  margin-bottom: 4rem;
 }
 
 .post-template .post-title {
@@ -245,16 +326,16 @@ body:not(.post-template) .post-title {
 
   img {
     padding: 0;
-    margin: 2.4rem auto;
+    margin: 0 auto;
     border-radius: 4px;
   }
 
-  figure { margin: 3.2rem 0; }
+  figure { margin-inline: 0; }
 
   figcaption,
   img + em {
     display: block;
-    margin-top: -1.2rem;
+    margin-top: 1rem;
     font-family: $sans;
     font-style: normal;
     font-size: 1.4rem;
@@ -262,6 +343,32 @@ body:not(.post-template) .post-title {
     color: $muted;
     text-align: center;
   }
+}
+
+// Vertical rhythm for the post body. Its children are grid items, and grid
+// items' margins don't collapse, so spacing is set explicitly between
+// siblings ("space before me, given what precedes me") instead of top+bottom.
+// Order matters: later rules win when both sides ask for space.
+$standalone-img: "p:has(> img:only-child)";
+
+.post-template .post-content {
+  > * { margin-block: 0; }
+  > * + * { margin-top: 1.4em; }
+
+  > * + :is(blockquote, pre, table, figure, .highlighter-rouge, #{$standalone-img}),
+  > :is(blockquote, pre, table, figure, .highlighter-rouge, #{$standalone-img}) + * {
+    margin-top: 1.8em;
+  }
+
+  > * + hr,
+  > hr + * { margin-top: 2.4em; }
+
+  > * + h2 { margin-top: 2.2em; }
+  > * + h3 { margin-top: 1.9em; }
+  > * + h4 { margin-top: 1.6em; }
+
+  > h2 + * { margin-top: 0.7em; }
+  > :is(h3, h4) + * { margin-top: 0.5em; }
 }
 
 // ---------------------------------------------------------------- blockquote
@@ -373,6 +480,22 @@ table th {
 
 @media only screen and (max-width: 500px) {
   body { font-size: 1.7rem; }
+
+  .home-template .main-header {
+    height: 52vh;
+    min-height: 300px;
+  }
+
+  .site-header .main-nav {
+    margin-bottom: 2.4rem;
+    padding: 1.6rem;
+  }
+
+  .post-template .post > .post-cover {
+    grid-column: full;
+    margin-bottom: 3.6rem;
+    img { border-radius: 0; }
+  }
 
   .page-title { font-size: 4.2rem; }
   .page-description { font-size: 1.8rem; }
