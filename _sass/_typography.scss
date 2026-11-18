@@ -1,0 +1,402 @@
+// Editorial typography layer, loaded after the Casper theme (screen.css).
+// Note: Casper sets html { font-size: 62.5% }, so 1rem = 10px.
+
+$serif:         "Source Serif 4", "Source Serif Fallback", Georgia, serif;
+$serif-display: "Source Serif 4", "Source Serif Display Fallback", Georgia, serif;
+$sans:  "Inter", "Inter Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$mono:  "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+$ink:     #1d1f21;
+$text:    #2b2d30;
+$muted:   #6b6f75;
+$faint:   #9aa0a6;
+$rule:    #e8e6e1;
+$paper:   #fffdf9;
+$wash:    #f6f4ef;
+$accent:  #b4472c;
+
+// ---------------------------------------------------------------- base
+
+body {
+  font-family: $serif;
+  font-optical-sizing: auto;
+  font-size: 1.9rem;
+  line-height: 1.65;
+  letter-spacing: 0;
+  color: $text;
+  background: $paper;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+::selection { background: rgba($accent, 0.18); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $serif-display;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  color: $ink;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  text-indent: 0;
+  font-feature-settings: "kern" 1, "liga" 1, "lnum" 1;
+  text-wrap: balance;
+}
+
+h1 { font-size: 4.4rem; letter-spacing: -0.02em; }
+h2 { font-size: 2.8rem; }
+h3 { font-size: 2.2rem; }
+h4 { font-size: 1.9rem; }
+h5, h6 {
+  font-family: $sans;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+}
+
+p, ul, ol, dl {
+  margin: 0 0 1.4em 0;
+  font-feature-settings: "kern" 1, "liga" 1, "onum" 1;
+}
+
+p { text-wrap: pretty; }
+
+li { margin: 0.35em 0; }
+li::marker { color: $faint; }
+
+hr {
+  border: 0;
+  height: auto;
+  margin: 3em 0;
+  text-align: center;
+  &::before {
+    content: "\2022\2003\2022\2003\2022";
+    color: $faint;
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+// ---------------------------------------------------------------- header / cover
+
+.page-title {
+  font-family: $serif-display;
+  font-weight: 600;
+  font-size: 6.4rem;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.page-description {
+  font-family: $serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 2.2rem;
+  letter-spacing: 0;
+}
+
+.main-header .page-description a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  margin: 0 0.4em;
+  transition: border-color 0.2s ease;
+  &:hover { border-bottom-color: #fff; }
+}
+
+.no-cover.main-header { background: $wash; }
+
+// Hairline under cover images, drawn outside the box so it doesn't crop the image.
+.main-header:not(.no-cover) { box-shadow: 0 1px 0 #dcd9d2; }
+
+
+.main-nav a,
+.back-button,
+.subscribe-button {
+  font-family: "casper-icons", $sans;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+// ---------------------------------------------------------------- post list (home)
+
+.post {
+  border-bottom-color: $rule;
+  hyphens: manual;
+}
+
+.post:after {
+  border-color: $rule;
+  background: $paper;
+  box-shadow: $paper 0 0 0 5px;
+}
+
+body:not(.post-template) .post-title {
+  font-size: 3.2rem;
+  line-height: 1.2;
+  margin-bottom: 0.35em;
+}
+
+.post-title a {
+  color: $ink;
+  transition: color 0.2s ease;
+  &:hover { color: $accent; }
+}
+
+.post-excerpt p {
+  font-size: 1.8rem;
+  line-height: 1.65;
+  color: $text;
+}
+
+.post-excerpt a:not(.read-more) {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba($accent, 0.45);
+  text-decoration-thickness: 0.07em;
+  text-underline-offset: 0.18em;
+  &:hover { color: $accent; text-decoration-color: $accent; }
+}
+
+.read-more { color: $accent; }
+
+.post-meta {
+  font-family: $sans;
+  font-size: 1.3rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.01em;
+  color: $muted;
+  a { color: $muted; }
+}
+
+.post-date {
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  border-left-color: $rule;
+}
+
+.post-template .post-date::before {
+  content: "\00B7";
+  margin: 0 0.6em 0 0.5em;
+  color: $faint;
+}
+
+// ---------------------------------------------------------------- single post
+
+.post-template .post-header {
+  margin-bottom: 4.8rem;
+}
+
+.post-template .post-title {
+  font-size: 4.4rem;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.45em;
+}
+
+.post-content {
+  font-family: $serif;
+  font-size: 2.1rem;
+  line-height: 1.7;
+  color: $text;
+
+  > p:first-of-type {
+    font-size: 1.12em;
+    line-height: 1.6;
+    color: $ink;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+    margin: 2.2em 0 0.6em;
+  }
+
+  h3 {
+    font-size: 2.2rem;
+    margin: 1.9em 0 0.5em;
+  }
+
+  h4 {
+    font-size: 1.9rem;
+    margin: 1.6em 0 0.4em;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: rgba($accent, 0.45);
+    text-decoration-thickness: 0.07em;
+    text-underline-offset: 0.18em;
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    &:hover {
+      color: $accent;
+      text-decoration-color: $accent;
+    }
+  }
+
+  strong { font-weight: 650; color: $ink; }
+
+  img {
+    padding: 0;
+    margin: 2.4rem auto;
+    border-radius: 4px;
+  }
+
+  figure { margin: 3.2rem 0; }
+
+  figcaption,
+  img + em {
+    display: block;
+    margin-top: -1.2rem;
+    font-family: $sans;
+    font-style: normal;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: $muted;
+    text-align: center;
+  }
+}
+
+// ---------------------------------------------------------------- blockquote
+
+blockquote {
+  margin: 2em 0;
+  padding: 0.1em 0 0.1em 1.2em;
+  border-left: 3px solid $accent;
+  color: $ink;
+
+  p {
+    font-style: italic;
+    margin: 0.6em 0;
+  }
+}
+
+// ---------------------------------------------------------------- code
+
+code, tt {
+  font-family: $mono;
+  font-size: 0.82em;
+  padding: 0.12em 0.36em;
+  border: 0;
+  border-radius: 4px;
+  background: $wash;
+  color: $ink;
+  white-space: normal;
+  font-variant-ligatures: none;
+}
+
+pre {
+  font-family: $mono;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 2em 0;
+  padding: 2rem 2.4rem;
+  background: $wash;
+  border: 1px solid $rule;
+  border-radius: 6px;
+}
+
+pre code, pre tt {
+  font-size: inherit;
+  padding: 0;
+  background: transparent;
+  overflow-x: auto;
+}
+
+// Rouge wraps fenced blocks in div.highlight > pre; don't double the box.
+.highlight pre { margin: 0; }
+div.highlighter-rouge, figure.highlight { margin: 2em 0; }
+
+// ---------------------------------------------------------------- tables
+
+table {
+  font-family: $sans;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  border-collapse: collapse;
+  margin: 2.4rem 0;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: manual;
+}
+
+table th,
+table td {
+  padding: 1rem 1.2rem 1rem 0;
+  line-height: 1.5;
+  border-top: 0;
+  border-bottom: 1px solid $rule;
+}
+
+table th {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $muted;
+  border-bottom: 1px solid $ink;
+}
+
+// ---------------------------------------------------------------- footer / author
+
+.post-footer {
+  border-top-color: $rule;
+  font-family: $sans;
+
+  h4 {
+    font-family: $serif-display;
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem;
+    color: $muted;
+  }
+}
+
+.site-footer {
+  font-family: $sans;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  color: $faint;
+}
+
+// ---------------------------------------------------------------- small screens
+
+@media only screen and (max-width: 500px) {
+  body { font-size: 1.7rem; }
+
+  .page-title { font-size: 4.2rem; }
+  .page-description { font-size: 1.8rem; }
+
+  .post-template .post-title { font-size: 3.4rem; }
+  body:not(.post-template) .post-title { font-size: 2.6rem; }
+
+  .post-template .post-title { line-height: 1.12; }
+
+  .post-content {
+    font-size: 1.85rem;
+    line-height: 1.65;
+    > p:first-of-type { font-size: 1.05em; }
+    h2 { font-size: 2.4rem; }
+    h3 { font-size: 2rem; }
+  }
+
+  pre {
+    font-size: 1.35rem;
+    padding: 1.6rem;
+    margin-left: -1.6rem;
+    margin-right: -1.6rem;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+  }
+}

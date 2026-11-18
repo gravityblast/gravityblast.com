@@ -14,7 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="preload" href="/assets/fonts/web/source-serif-4-roman.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/web/inter.woff2" as="font" type="font/woff2" crossorigin />
     <!-- Customisation  -->
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
 
@@ -23,7 +24,7 @@
     <meta property="og:url" content="{{ page.url | default: site.url | absolute_url }}" />
     <meta property="og:image" content="{{ page.share_image | default: page.cover | default: site.cover | absolute_url }}" />
 </head>
-<body class="{% if page.post_class %}{{page.post_class}}{% else %}home-template{% endif %}">
+<body class="{{ page.post_class | default: layout.post_class | default: 'home-template' }}">
 
     {{ content }}
     <footer class="site-footer clearfix">

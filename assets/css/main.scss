@@ -4,7 +4,9 @@
 ---
 
 // Load partials from `sass_dir` (defaults to `_sass`)
+@use "fonts";
 @use "syntax";
+@use "typography";
 
 /* We need to add display:inline in order to align the '>>' of the 'read more' link */
 .post-excerpt p {
