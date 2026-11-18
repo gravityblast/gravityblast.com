@@ -8,7 +8,6 @@ post_class: post-template
 <header class="site-header">
     <nav class="main-nav clearfix">
         <a class="back-button icon-arrow-left" href="/">Home</a>
-        <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
         <a class="nav-link" href="/about/">About</a>
     </nav>
 </header>
@@ -17,18 +16,14 @@ post_class: post-template
 
     <article class="post">
 
-        <header class="post-header clearfix">
+        <header class="post-header">
             <h1 class="post-title">{{ page.title }}</h1>
-            <section class="post-meta">
-                {% if site.author %}
-                    <img class="author-thumb" src="/assets/images/profile.png" alt="Author's profile picture" nopin="nopin" />
-                    {{ site.author }}
-                {% endif %}
-                <time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time>
-                {% if page.tags.size > 0 %}
-                    {{ page.tags | array_to_sentence_string | prepend: 'on ' }}
-                {% endif %}
-            </section>
+            {% assign minutes = content | number_of_words | divided_by: 220 | at_least: 1 %}
+            <p class="post-byline">
+                <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%-d %B %Y" }}</time>
+                <span aria-hidden="true">&middot;</span>
+                {{ minutes }} min read
+            </p>
         </header>
 
         {% if page.cover %}
@@ -52,27 +47,27 @@ post_class: post-template
         </section>
         {% endif %}
 
-        <footer class="post-footer">
-            <!-- If we want to display author's name and bio -->
-            {% if site.author %}
-                <figure class="author-image">
-                    <a class="img" href="{{ site.baseurl }}" style="background-image: url(/assets/images/profile.png)">
-                    <span class="hidden">{{site.author}}'s Picture</span></a>
-                </figure>
-                <section class="author">
-                    <!-- Author Name -->
-                    <h4> {{ site.author }} </h4>
-                    <!-- Author Bio -->
-                    <p>
-                      web3 software engineer.
-                      <a href="https://github.com/gravityblast">github.com/gravityblast</a> |
-                      <a href="https://x.com/gravityblast">x.com/gravityblast</a>
-                    </p>
-                </section>
+        <footer class="post-end">
+            {% if page.tags.size > 0 %}
+            <ul class="post-tags" aria-label="Tags">
+                {% for tag in page.tags %}<li>{{ tag }}</li>{% endfor %}
+            </ul>
             {% endif %}
 
-            <!-- Share links section -->
-            {% include share.html %}
+            <div class="post-end-row">
+                <div class="author-card">
+                    <img class="author-avatar" src="/assets/images/profile.png" alt="" width="48" height="48" />
+                    <div>
+                        <p class="author-name">{{ site.author }}</p>
+                        <p class="author-bio">
+                            Follow me on <a href="https://github.com/gravityblast">GitHub</a>
+                            and <a href="https://x.com/gravityblast">X</a>.
+                        </p>
+                    </div>
+                </div>
+
+                {% include share.html %}
+            </div>
         </footer>
 
     </article>

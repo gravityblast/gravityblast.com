@@ -19,6 +19,8 @@
     <!-- Customisation  -->
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
 
+    <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ "/feed.xml" | absolute_url }}" />
+
     <meta name="twitter:card" content="summary_large_image"></meta>
     <meta property="og:title" content="{{ page.title | default: site.title }}" />
     <meta property="og:url" content="{{ page.url | default: site.url | absolute_url }}" />
@@ -28,11 +30,15 @@
 <body class="{{ page.post_class | default: layout.post_class | default: 'home-template' }}">
 
     {{ content }}
-    <footer class="site-footer clearfix">
-      <section class="copyright">
-        &copy; {{site.time | date: "%Y"}} &bull;
-        <a href="{{ site.url }}">{{ site.author }}</a>
-      </section>
+    <footer class="footer">
+      <div class="footer-inner">
+        <span>&copy; {{ site.time | date: "%Y" }} {{ site.author }}</span>
+        <nav class="footer-links" aria-label="Elsewhere">
+          <a href="/feed.xml">RSS</a>
+          <a href="https://github.com/gravityblast">GitHub</a>
+          <a href="https://x.com/gravityblast">X</a>
+        </nav>
+      </div>
     </footer>
 
     <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
