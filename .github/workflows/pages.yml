@@ -32,6 +32,9 @@ jobs:
           ruby-version: "4.0"
           bundler-cache: true
 
+      - name: Check narrations match post text
+        run: bundle exec ruby script/narrate.rb --check
+
       - id: pages
         uses: actions/configure-pages@v5
 

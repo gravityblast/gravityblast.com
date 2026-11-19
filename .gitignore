@@ -44,3 +44,7 @@ validation-report.json
 node_modules
 
 .sass-cache
+
+# Local secrets and narration cache
+.env
+.narrate-cache

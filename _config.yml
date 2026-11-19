@@ -21,3 +21,7 @@ url:             'http://gravityblast.com'
 rss_title:       'Andrea Franz'
 rss_description: 'dev blog by Andrea Franz'
 
+
+# Not part of the site
+exclude:
+  - script
