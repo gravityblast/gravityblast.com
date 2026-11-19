@@ -510,15 +510,154 @@ table th {
 
 // ---------------------------------------------------------------- byline / end of post / footer
 
-.post-byline {
-  margin: 0;
-  font-family: $sans;
-  font-size: 1.4rem;
-  letter-spacing: 0.01em;
+.post-dek {
+  margin: 0 0 2.8rem;
+  font-family: $serif;
+  font-size: 2.2rem;
+  line-height: 1.5;
   color: $muted;
-
-  span { margin: 0 0.5em; color: $faint; }
+  text-wrap: pretty;
 }
+
+.post-byline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+  font-family: $sans;
+}
+
+.byline-author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  min-width: 0;
+
+  > div { display: flex; flex-direction: column; }
+}
+
+.byline-avatar {
+  flex: none;
+  width: 4.4rem;
+  height: 4.4rem;
+  border-radius: 50%;
+}
+
+.byline-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: $ink;
+}
+
+.byline-meta {
+  white-space: nowrap;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: $muted;
+}
+
+.byline-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex: none;
+}
+
+// Listen + Share share one quiet pill style.
+.listen-button,
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.9rem 1.8rem;
+  font: inherit;
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: $ink;
+  background: $paper;
+  border: 1px solid $rule;
+  border-radius: 999px;
+  cursor: pointer;
+  user-select: none;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+
+  &:hover { border-color: $faint; }
+  &:focus-visible { outline: 2px solid $accent; outline-offset: 2px; }
+}
+
+.listen-button {
+  &[hidden] { display: none; }
+  svg { color: $accent; }
+  .lb-pause { display: none; }
+  .lb-time { color: $faint; font-variant-numeric: tabular-nums; }
+  .lb-time:empty { display: none; }
+
+  &.is-playing {
+    .lb-play { display: none; }
+    .lb-pause { display: block; }
+  }
+}
+
+// Player stays hidden until Listen is pressed, then fades in.
+.audio-player.is-collapsed { display: none; }
+.audio-player.is-opening { animation: ap-open 0.25s ease-out; }
+
+@keyframes ap-open {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: none; }
+}
+
+// Share button + menu (<details>; assets/js/share.js enhances it).
+.share-menu {
+  position: relative;
+  flex: none;
+
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+}
+
+.share-button {
+  .share-menu[open] & { background: $wash; border-color: $faint; }
+}
+
+.share-popover {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.8rem);
+  z-index: 10;
+  min-width: 22rem;
+  padding: 0.6rem;
+  background: $paper;
+  border: 1px solid $rule;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  a, button {
+    box-sizing: border-box; // the theme defaults to content-box, so padding overflowed
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    font: inherit;
+    font-size: 1.4rem;
+    color: $text;
+    text-align: left;
+    text-decoration: none;
+    background: none;
+    border: 0;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &:hover, &:focus-visible { background: $wash; color: $ink; outline: none; }
+    &[hidden] { display: none; }
+  }
+
+  svg { flex: none; color: $muted; }
+}
+
 
 // Narration player (assets/js/audio-player.js). Without JS the native
 // <audio controls> shows instead.
@@ -788,6 +927,19 @@ table th {
   .post-excerpt p { font-size: 1.7rem; }
 
   .post-template .post-title { line-height: 1.12; }
+
+  .post-dek { font-size: 1.9rem; margin-bottom: 2.4rem; }
+  .byline-avatar { width: 4rem; height: 4rem; }
+  .byline-meta { font-size: 1.3rem; }
+  // Icon-only round buttons on phones so the byline never overlaps.
+  .listen-button, .share-button {
+    justify-content: center;
+    width: 4rem;
+    height: 4rem;
+    padding: 0;
+  }
+  .byline-actions .btn-label,
+  .listen-button .lb-time { display: none; }
 
   .ap-ui {
     gap: 1.2rem;

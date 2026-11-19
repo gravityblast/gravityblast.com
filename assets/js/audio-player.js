@@ -99,6 +99,37 @@
     root.classList.add("is-ready");
     ui.hidden = false;
 
+    // Collapsed mode: a "Listen" button in the byline opens the player and
+    // starts playback; afterwards it mirrors play/pause.
+    var listen = document.querySelector(".listen-button");
+    var listenTime = listen && listen.querySelector(".lb-time");
+    var listenLabel = listen && listen.querySelector(".btn-label");
+    if (listen) {
+      root.classList.add("is-collapsed");
+      listen.hidden = false;
+      listen.addEventListener("click", function () {
+        if (root.classList.contains("is-collapsed")) {
+          root.classList.remove("is-collapsed");
+          root.classList.add("is-opening");
+          layout();
+          audio.play();
+        } else if (audio.paused) {
+          audio.play();
+        } else {
+          audio.pause();
+        }
+      });
+    }
+
+    function syncListen() {
+      if (!listen) return;
+      var playing = !audio.paused;
+      listen.classList.toggle("is-playing", playing);
+      listen.setAttribute("aria-label", playing ? "Pause narration" : "Listen to this post");
+      listenLabel.textContent = playing ? "Pause" : "Listen";
+      if (dur()) listenTime.textContent = fmt(dur());
+    }
+
     play.addEventListener("click", function () {
       if (audio.paused) audio.play(); else audio.pause();
     });
@@ -106,17 +137,20 @@
     audio.addEventListener("play", function () {
       root.classList.add("is-playing");
       play.setAttribute("aria-label", "Pause");
+      syncListen();
       cancelAnimationFrame(raf);
       tick();
     });
     audio.addEventListener("pause", function () {
       root.classList.remove("is-playing");
       play.setAttribute("aria-label", "Play");
+      syncListen();
       draw();
     });
     audio.addEventListener("ended", function () { audio.currentTime = 0; draw(); });
     audio.addEventListener("loadedmetadata", function () {
       wave.setAttribute("aria-valuemax", Math.round(dur()));
+      syncListen();
       draw();
     });
     audio.addEventListener("seeked", draw);
@@ -162,6 +196,7 @@
         });
         duration = data.duration || 0;
         wave.setAttribute("aria-valuemax", Math.round(duration));
+        syncListen();
         layout();
       }).catch(function () {});
     }
